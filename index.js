@@ -23,6 +23,7 @@ function updateTime(){
     var timerValues = [];
 
     var partyTime = 77820;
+    partyTime = 36000; // 10:00
     // partyTime = 82680;
     // partyTime =68020 // 18:53
     var anthemLength = 50;
