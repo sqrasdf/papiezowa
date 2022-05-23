@@ -86,7 +86,15 @@ function updateTime(){
 var t=setInterval(updateTime, 1000);
 
 function papajak(){
-    document.getElementById("barka").innerHTML = "<audio src=\"yo.mp3\" autoplay></audio>";
+    var sound = new Howl({
+        src: ['yo.mp3'],
+        autoplay: true,
+        loop: false,
+        volume: 1,
+    });
+    sound.play();
+    
+    // document.getElementById("barka").innerHTML = "<audio src=\"yo.mp3\" autoplay></audio>";
     document.getElementById("papaj").innerHTML = '<img class="papajakgif" src="papajak.gif" >';
     document.querySelector('#text').style.opacity = '0';
     document.querySelector('#timer').style.opacity = '0';
@@ -94,7 +102,7 @@ function papajak(){
 }
 
 function normal(){
-    document.getElementById("barka").innerHTML = "";
+//     document.getElementById("barka").innerHTML = "";
     document.getElementById("papaj").innerHTML = "";
     document.querySelector('#text').style.opacity = '1';
     document.querySelector('#timer').style.cssText += 'opacity: 1;'
