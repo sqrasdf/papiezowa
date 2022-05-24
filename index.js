@@ -47,7 +47,7 @@ function updateTime(){
         papajak();
     }
     
-    if (timeinseconds == partyTime + anthemLength + 1){
+    if (timeinseconds == partyTime + anthemLength + 5){
         normal();
     }
     
@@ -87,19 +87,21 @@ function updateTime(){
 var t=setInterval(updateTime, 1000);
 
 function papajak(){
-    var sound = new Howl({
-        src: ['yo.mp3'],
-        autoplay: true,
-        loop: false,
-        volume: 1,
-    });
-    sound.play();
+//     var sound = new Howl({
+//         src: ['yo.mp3'],
+//         autoplay: true,
+//         loop: false,
+//         volume: 1,
+//     });
+//     sound.play();
     
     // document.getElementById("barka").innerHTML = "<audio src=\"yo.mp3\" autoplay></audio>";
     document.getElementById("papaj").innerHTML = '<img class="papajakgif" src="papajak.gif" >';
     document.querySelector('#text').style.opacity = '0';
     document.querySelector('#timer').style.opacity = '0';
     document.body.style = `background: linear-gradient(270deg, #f30e0e, #f39d0e, #e3f30e, #74f30e, #0ef3cc, #0e64f3, #d30ef3, #f30e35);` + styling;
+    
+    document.getElementById("muted").innerHTML = '<img src="muted2.jpg" width="150px" height="200px" alt=""></img>';
 }
 
 function normal(){
@@ -109,4 +111,18 @@ function normal(){
     document.querySelector('#timer').style.cssText += 'opacity: 1;'
     document.body.style = `background: #1B1A17;` + styling;
 }
+
+document.getElementById("muted").addEventListener("click", function() {
+    var sound = new Howl({
+        src: ['yo.mp3'],
+        autoplay: true,
+        loop: false,
+        volume: 1,
+    });
+    
+    sound.play();
+    document.getElementById("muted").innerHTML = "";
+}
+);
+
 
