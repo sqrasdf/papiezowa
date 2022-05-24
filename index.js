@@ -52,7 +52,7 @@ function updateTime(){
     }
     
     // time >= 21:38
-    if (timeinseconds > partyTime + anthemLength){
+    if (timeinseconds > partyTime){
         var remainingTime = 86400 - timeinseconds + partyTime;
         var timerHour = Math.floor(remainingTime / 3600);
         remainingTime -= timerHour * 3600;
